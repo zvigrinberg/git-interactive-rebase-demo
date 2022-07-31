@@ -9,14 +9,11 @@ from main branch, Kindly run
    echo "this is important too but partial" >> test-important-part.out ; git add . ; git commit -m "partial commit"
    echo "this is important too and now i updated it" >> test-important-part.out ; git add . ; git commit -m "partial commit second part"
    echo "this is a totally bullshit commit" >> test-bullshit.out ; git add . ; git commit -m "bullshit commit"
-   git log
    echo "this is also important too but only part 1" >> test-in-portions.out ; git add . ; git commit -m "first part"
    echo "this is also important too but only part 2" >> test-in-portions.out ; git add . ; git commit -m "second part"
-   echo "this is also important too but only part 3" >> test-in-portions.out ; git add . ; git commit -m "thid part"
+   echo "this is also important too but only part 3" >> test-in-portions.out ; git add . ; git commit -m "third part"
    ll
    cat test-in-portions.out
-   git commit --amend
-   git log
    echo "this is a totally bullshit commit 2" >> test-bullshit2.out ; git add . ; git commit -m "bullshit commit 2"
    git log
    git rebase -i main
@@ -24,12 +21,12 @@ from main branch, Kindly run
    2. git rebase interactive opened an editor with the following content, the commits on top should be with the following values on the left side:
    ```shell
    pick 5247bfc important commit
-   pick 9acd1b3 first part + second part
-   squash 6067828 partial commit second part
+   reword 9acd1b3 first part + second part
+   fixup 6067828 partial commit second part
    drop 58d9168 bullshit commit
-   pick a281984 first part + second part + third part
-   squash febfa00 second part
-   squash 2f5cd7a third part
+   reword a281984 first part + second part + third part
+   fixup febfa00 second part
+   fixup 2f5cd7a third part
    drop a8669e3 bullshit commit 2
 
    # Rebase e49c1d7..a8669e3 onto e49c1d7 (8 commands)
