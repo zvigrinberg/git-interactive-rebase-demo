@@ -58,7 +58,11 @@ from main branch, Kindly run
       forwarding HEAD
       ```shell   
          git log
-         git checkout main ; git merge feature/rebaseInteractive
+         git checkout main 
+         ## Generate summary of what is going to be merged into main from feature/rebaseInteractive
+         git request-pull -p HEAD ./ feature/rebaseInteractive
+         ## Merge          
+         git merge feature/rebaseInteractive
          git log
          ll
          cat test-important.out
