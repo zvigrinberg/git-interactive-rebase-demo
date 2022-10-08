@@ -15,7 +15,7 @@ from main branch, Kindly run
    ll
    cat test-in-portions.out
    echo "this is a totally dummy commit 2" >> test-dummy2.out ; git add . ; git commit -m "dummy commit 2"
-   git log
+   ##git log
    git branch feature/rebaseInteractive-original
    git rebase -i main
    ```
