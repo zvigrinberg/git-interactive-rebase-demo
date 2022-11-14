@@ -2,6 +2,8 @@
 ## Procedure
 from main branch, Kindly run
 ```shell
+   git init
+   echo "initial commit" >> initial.out ; git add . ; git commit -m "initial commit"
    git checkout -b feature/rebaseInteractive
    ll
    echo "this is important" >> test-important.out
